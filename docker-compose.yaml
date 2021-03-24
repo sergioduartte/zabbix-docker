@@ -60,56 +60,9 @@ services:
     depends_on:
       - mysql-zabbix
       - zabbix-server
-  
-    #  zabbix-agent:
-    #container_name: zabbix-agent
-    #image: zabbix/zabbix-agent:ubuntu-5.0.9
-    #networks:
-    #  - network-zabbix
-    #restart: always
-    #environment:
-    #  - ZBX_HOSTNAME='zabbix-server'
-    #  - ZBX_SERVER_HOST=$ZBX_SERVER_HOST
-    #  - ZBX_SERVER_PORT=$ZBX_SERVER_PORT
-    #ports:
-    #  - '10050:10050'
 
 networks:
   zabbix-network:
     name: zabbix-network
     driver: bridge
 
-#  grafana:
-#    container_name: grafana
-#    image: grafana/grafana
-#    networks:
-#      - network-zabbix
-#    links:
-#      - mysql
-#      - zabbix-server
-#    restart: always
-#    ports:
-#      - '3000:3000'
-#    environment: 
-#      - GF_INSTALL_PLUGINS=alexanderzobnin-zabbix-app
-#    depends_on:
-#      - mysql
-#      - zabbix-server
-#  zabbix-agent:
-#    container_name: zabbix-agent
-#    image: zabbix/zabbix-agent2:alpine-5.0.1
-#    user: root
-#    networks:
-#      - network-zabbix
-#    links:
-#      - zabbix-server
-#    restart: always
-#    privileged: true
-#    volumes:
-#      - /var/run:/var/run
-#    ports:
-#      - '10050:10050'
-#    environment:
-#      - ZBX_HOSTNAME=Zabbix server
-#      - ZBX_SERVER_HOST=172.18.0.1
-        #  
