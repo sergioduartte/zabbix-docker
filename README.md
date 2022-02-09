@@ -1,5 +1,5 @@
 # zabbix-docker
-Full installation of Zabbix with containers Docker:
+Full installation of Zabbix with Docker containers:
 
 The components of Zabbix that are deployed with the docker-compose.yaml:
 - Mysql (DB)
